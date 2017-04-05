@@ -1,0 +1,62 @@
+{
+    "$schema": "http://schema.express.azure.com/schemas/2015-01-01-alpha/ServiceModel.json",
+    "contentVersion": "0.0.0.1",
+
+    "ServiceMetadata": {
+        "ServiceGroup": "Contoso-MktPlace",
+        "Environment": "Test"
+    },
+    
+    "ServiceResourceGroupDefinitions": [    
+    {
+        "Name":"MktPlace.AppIngestion",
+        "ServiceResourceDefinitions": [
+        {
+            "Name":"MktPlace.AppIngestion.AppLoader",
+            "ArmTemplatePath":"Templates\\MktPlace.AppIngestion.AppLoader.Template.json"
+        }
+        ]
+    }
+    ],
+
+    "ServiceResourceGroups": [
+        {
+            // Replace the placeholder with  your own resource group name and its location
+            "AzureResourceGroupName": "EV2Test1",
+            "Location": "West US",
+
+            "InstanceOf": "MktPlace.AppIngestion",
+
+            // Replace the placeholder with your own azure subscription id
+            "AzureSubscriptionId": "c00d16c7-6c1f-4c03-9be1-6934a4c49682",
+
+            "ServiceResources": [
+                {
+                    "Name": "AppLoader001",
+                    "InstanceOf": "MktPlace.AppIngestion.AppLoader",
+                    "ArmParametersPath": "Parameters\\AppLoader001.Parameters.json",
+                    "RolloutParametersPath": "Parameters\\AppLoader001.RolloutParameters.json"
+                }
+            ]
+        },
+        {
+            // Add your own resource group name and its location
+            "AzureResourceGroupName": "EV2Test2",
+            "Location": "West Europe",
+
+            "InstanceOf": "MktPlace.AppIngestion",
+
+            // Replace the placeholder with your own azure subscription id
+            "AzureSubscriptionId": "c00d16c7-6c1f-4c03-9be1-6934a4c49682",
+
+            "ServiceResources": [
+                {
+                    "Name": "AppLoader002",
+                    "InstanceOf": "MktPlace.AppIngestion.AppLoader",
+                    "ArmParametersPath": "Parameters\\AppLoader002.Parameters.json",
+                    "RolloutParametersPath": "Parameters\\AppLoader002.RolloutParameters.json"
+                }
+            ]
+        }
+    ]
+}
