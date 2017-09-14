@@ -36,6 +36,12 @@
                     "InstanceOf": "MktPlace.AppIngestion.AppLoader",
                     "ArmParametersPath": "Parameters\\AppLoader001.Parameters.json",
                     "RolloutParametersPath": "Parameters\\AppLoader001.RolloutParameters.json"
+                },
+                {
+                    "Name": "AppLoader002",
+                    "InstanceOf": "MktPlace.AppIngestion.AppLoader",
+                    "ArmParametersPath": "Parameters\\AppLoader002.Parameters.json",
+                    "RolloutParametersPath": "Parameters\\AppLoader002.RolloutParameters.json"
                 }
             ]
         },
@@ -55,7 +61,13 @@
                     "InstanceOf": "MktPlace.AppIngestion.AppLoader",
                     "ArmParametersPath": "Parameters\\AppLoader002.Parameters.json",
                     "RolloutParametersPath": "Parameters\\AppLoader002.RolloutParameters.json"
-                }
+                },
+                {
+                    "Name": "AppLoader001",
+                    "InstanceOf": "MktPlace.AppIngestion.AppLoader",
+                    "ArmParametersPath": "Parameters\\AppLoader001.Parameters.json",
+                    "RolloutParametersPath": "Parameters\\AppLoader001.RolloutParameters.json"
+                },
             ]
         }
     ]
